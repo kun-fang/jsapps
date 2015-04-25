@@ -1,0 +1,45 @@
+<div ng-if="edit">
+    <tabset>
+        <tab heading="Hourly" select="onSelectTab('hourly')">
+            <div class="input-group">
+                <span class="input-group-addon"><b>Every</b></span>
+                <input type="number" class="form-control" ng-model="models.hourly.hour">
+                <span class="input-group-addon"><b>hours</b></span>
+            </div>
+        </tab>
+        <tab heading="Daily" select="onSelectTab('daily')">
+            <div class="input-group">
+                <span class="input-group-addon"><b>At</b></span>
+                <select class="form-control" ng-options="hour for hour in hours" ng-model="models.daily.hour"></select>
+                <span class="input-group-addon"><b>:00</b></span>
+            </div>  
+        </tab>
+        <tab heading="Monthly" select="onSelectTab('monthly')">
+            <div class="input-group">
+                <span class="input-group-addon"><b>On</b></span>
+                <select class="form-control" ng-options="date for date in dates" ng-model="models.monthly.dates" multiple="multiple"></select>
+                <span class="input-group-addon"><b>of month</b></span>
+                <span class="input-group-addon"><b>At</b></span>
+                <select class="form-control" ng-options="hour for hour in hours" ng-model="models.monthly.hour"></select>
+                <span class="input-group-addon"><b>:00</b></span>
+            </div>
+        </tab>
+        <tab heading="Weekly" select="onSelectTab('weekly')">
+            <div class="input-group">
+                <span class="input-group-addon"><b>Every</b></span>
+                <select class="form-control" ng-options="weekday for weekday in weekdays" ng-model="models.weekly.weekdays" multiple="multiple"></select>
+                <span class="input-group-addon"><b>at</b></span>
+                <select class="form-control" ng-options="hour for hour in hours" ng-model="models.weekly.hour"></select>
+                <span class="input-group-addon"><b>:00</b></span>
+            </div>
+        </tab>
+    </tabset>
+</div>  
+<div ng-if="!edit">
+    <div class="input-group">
+        <input type="text" class="form-control" ng-model="display" readonly>
+        <span class="input-group-btn">
+            <button class="btn btn-danger" ng-click="editMode()">Edit</button>
+        </span>
+    </div>
+</div>
