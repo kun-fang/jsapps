@@ -14,10 +14,10 @@
     <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
     <script src="main.js"></script>
     <script src="app/scheduler/scheduler.js"></script>
+    <script src="app/file_input/file_input.js"></script>
 
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="app/scheduler/scheduler.css" rel="stylesheet">
 
 </head>
 <body ng-controller="myAppCtrl">
@@ -29,9 +29,7 @@
       <h1>Hello {{yourName}}!</h1>
     </div>
     <hr>
-    <div class="row">
-        <div class="col-sm-3"><scheduler ng-model="test"></scheduler></div>
-    </div>
-    in main scope: {{test}}
+    <file-select ng-model="file"></file-select>
+    <button ng-click="test()">TEST</button>
 </body>
 </html>

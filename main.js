@@ -1,7 +1,8 @@
-/*global angular*/
+/*global angular, console*/
 
-var app = angular.module('myApp', ['scheduleEditor']);
-
-app.controller('myAppCtrl', ['$scope', function ($scope) {
-    'use strict';
-}]);
+angular.module('myApp', ['scheduleEditor', 'fileInput'])
+    .controller('myAppCtrl', ['$scope', function ($scope) {
+        $scope.test = function () {
+            console.log($scope.file);
+        };
+    }]);
