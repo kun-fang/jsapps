@@ -15,6 +15,7 @@
     <script src="main.js"></script>
     <script src="app/scheduler/scheduler.js"></script>
     <script src="app/file_input/file_input.js"></script>
+    <script src="app/csv_download/download_csv.js"></script>
 
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +30,6 @@
       <h1>Hello {{yourName}}!</h1>
     </div>
     <hr>
-    <file-select ng-model="file"></file-select>
-    <button ng-click="test()">TEST</button>
+    <button csv class="btn btn-danger" file-name="test_csv" data="data">Download CSV</button>
 </body>
 </html>
